@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 (http://www.altova.com) by Carl Lagoze (University of Michigan) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:re3="http://www.re3data.org/schema/2-2" xmlns:datacite="http://datacite.org/schema/kernel-4" xmlns="http://ourdomain.cornell.edu/reuse/v.01" targetNamespace="http://ourdomain.cornell.edu/reuse/v.01" elementFormDefault="qualified">
+	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="https://schema.datacite.org/meta/kernel-4.0/include/datacite-relatedIdentifierType-v4.xsd"/>
+	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="https://schema.datacite.org/meta/kernel-4.0/include/datacite-relationType-v4.xsd"/>
+	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="https://schema.datacite.org/meta/kernel-4.0/include/datacite-resourceType-v4.xsd"/>
+	<xs:import namespace="http://www.re3data.org/schema/2-2" schemaLocation="http://schema.re3data.org/2-2/re3dataV2-2.xsd"/>
+	<xs:element name="record">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identifier">
+					<xs:annotation>
+						<xs:documentation>A persistent identifier that identifies a resource.</xs:documentation>
+						<xs:documentation>Currently, only DOI is allowed.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="doiType">
+								<xs:attribute name="identifierType" use="required" fixed="DOI"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="date" type="xs:date"/>
+				<xs:element name="lastModified" type="xs:date"/>
+				<xs:element name="relatedIdentifier" minOccurs="1" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Identifiers of related resources. Use this property to indicate
+              subsets of properties, as appropriate.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="relatedIdentifierType" type="datacite:relatedIdentifierType" use="required"/>
+								<xs:attribute name="relationType" type="datacite:relationType" use="required"/>
+								<xs:attribute name="relatedMetadataScheme" use="optional"/>
+								<xs:attribute name="schemeURI" type="xs:anyURI" use="optional"/>
+								<xs:attribute name="schemeType" use="optional"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="supplementaryProducts">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="supplementaryProduct" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="productID">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="relatedIdentifierType" type="datacite:relatedIdentifierType" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="productType" type="datacite:resourceType"/>
+										<xs:element name="productLicense">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:anyURI">
+														<xs:attribute name="dataLicenseType" use="required"/>
+														<xs:attribute name="dataLicenseVerbatim"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="productTermsOfUse">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:anyURI">
+														<xs:attribute name="termsOfuseType" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="productMetadata" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:anyURI">
+														<xs:attribute name="relationType" use="required" fixed="HasMetadata"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="institutionBlock">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="institutionID">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="emailAddress">
+																	<xs:attribute name="institutionIDType" use="required"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="institutionName" type="xs:string"/>
+													<xs:element name="institutionType" type="institutionTypeUnion"/>
+													<xs:element name="superOrganizationName" type="xs:string" minOccurs="0"/>
+													<xs:element name="institutionContact">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="emailAddress">
+																	<xs:attribute name="institutionContactType" type="institutionContactTypes"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="institutionSustainability">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="missionStatementURL" type="xs:anyURI"/>
+																<xs:element name="fundingStatementURL" type="xs:anyURI"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="institutionPolicy" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:anyURI">
+																	<xs:attribute name="policyType" type="policyTypes"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="versioning" type="re3:yesno"/>
+													<xs:element name="orchidSupport" type="re3:yesno"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- TYPE DECLARATIONS -->
+	<!-- defines the value for a DOI"  -->
+	<xs:simpleType name="doiType">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="10\..+/.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="myInstitutionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="governmental"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="institutionTypeUnion">
+		<xs:union memberTypes="myInstitutionType re3:institutionTypes"/>
+	</xs:simpleType>
+	<xs:simpleType name="emailAddress">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^@]+@[^\.]+\..+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="institutionContactTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="dataCustodian"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="policyTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Access"/>
+			<xs:enumeration value="Collection"/>
+			<xs:enumeration value="Data"/>
+			<xs:enumeration value="Metadata"/>
+			<xs:enumeration value="Preservation"/>
+			<xs:enumeration value="Submission"/>
+			<xs:enumeration value="Quality"/>
+			<xs:enumeration value="Terms of Use"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
