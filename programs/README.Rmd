@@ -1,0 +1,103 @@
+---
+title: "Some explorations"
+author: "Lars Vilhuber"
+date: "October 22, 2018"
+output:
+  html_document:
+    highlight: zenburn
+    keep_md: yes
+    self_contained: no
+    theme: journal
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+pkgTest <- function(x)
+{
+	if (!require(x,character.only = TRUE))
+	{
+		install.packages(x,dep=TRUE)
+		if(!require(x,character.only = TRUE)) stop("Package not found")
+	}
+	return("OK")
+}
+
+global.libraries <- c("rcrossref","roadoi","dplyr","devtools","rprojroot","tictoc","rdatacite")
+results <- sapply(as.list(global.libraries), pkgTest)
+```
+
+## Unreliability of metadata
+
+We picked a few DOIs where we know that reasonable data exists.
+```{r set_dois, cache=TRUE}
+# select DOIs
+dois = c("10.3886/E100590V1","10.3886/ICPSR21600.v21")
+refs <- rcrossref::cr_cn(dois,format = "text")
+```
+
+### Article 1
+The first one is an openICPSR deposit:
+
+```{r,results='markup'}
+knitr::kable(unlist(refs[1]),col.names = "Dataset:")
+```
+```{r get_cite1, cache=TRUE}
+dc.1 <- dc_work(doi = dois[1])
+```
+We note that the archive is listed as 
+```{r cite1,results='markup'}
+# Easier to work with
+dc.1.attributes <- dc.1$data$attributes
+dc.1.df <- dc.1.attributes[c("container-title","data-center-id")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.1.df, col.names = c("Attribute","Value"))
+```
+
+neither of which completely describe the particular sub-repository within the ICPSR universe. 
+More worringly for our purposes, the license field (optional on DataCite) is empty:
+```{r license1,results='markup'}
+dc.1.df <- dc.1.attributes[c("license")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.1.df, col.names = c("Attribute","Value"))
+```
+
+even though the website lists a license:
+
+![openICPSR license display](../text/images/openicpsr-license-image.png)
+
+### Article 2
+The second deposit was picked because it it the most downloaded dataset as of 2018-10-22: 
+
+```{r,echo=FALSE,results='markup'}
+knitr::kable(unlist(refs[2]),col.names = "Dataset:")
+```
+```{r get_cite2, cache=TRUE}
+dc.2 <- dc_work(doi = dois[2])
+```
+The archive's name is again listed as
+```{r cite2,results='markup'}
+# Easier to work with
+dc.2.attributes <- dc.2$data$attributes
+dc.2.df <- dc.2.attributes[c("container-title","data-center-id")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.2.df, col.names = c("Attribute","Value"))
+```
+
+The license is again listed as
+```{r license2,results='markup'}
+dc.2.df <- dc.2.attributes[c("license")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.2.df, col.names = c("Attribute","Value"))
+```
+
+Clearly, ICPSR uses a common registration mechanism both for uncurated open deposits (openICPSR) and formal curated archives (ICPSR). 
