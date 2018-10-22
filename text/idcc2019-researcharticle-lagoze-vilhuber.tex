@@ -1,0 +1,63 @@
+%!TeX TXS-program:bibliography = txs:///biber
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor={black},
+	citecolor={black},
+	urlcolor={blue}
+}
+\usepackage{float}
+\usepackage{acronym}
+
+\input{acrodefs.tex}
+%\usepackage{natbib}
+\usepackage[sorting=nyt,maxnames=10,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{references-zotero.bib}
+
+% Different ways to cite URLS
+%\newcommand{\urlcite}[2]{\href{#1}{#2}
+\newcommand{\urlcite}[2]{#2\footnote{\url{#1}}}
+
+\author{Lars Vilhuber and Carl Lagoze}
+\title{Supplementary Materials}
+\begin{document}
+	
+\begin{abstract}
+	\input{abstract}
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+\input{idcc2019-introduction}
+
+\section{Use Case}
+\label{sec:usecase}
+\input{idcc2019-usecase}
+
+\section{Related Metadata}
+\label{sec:related-metadata}
+\input{idcc2019-related-metadata}
+
+\section{Metadata Package}
+\label{sec:metadata-package}
+\input{idcc2019-metadata-package}
+
+\section{Usability Notes}
+\label{sec:usability}
+\input{idcc2019-usability}
+
+\section{Acknowledgements}
+\label{sec:ack}
+\input{idcc2019-acknowledgements}
+
+
+%\bibliographystyle{chicagoa}
+%\bibliography{references.bib}
+\printbibliography
+
+\end{document}
