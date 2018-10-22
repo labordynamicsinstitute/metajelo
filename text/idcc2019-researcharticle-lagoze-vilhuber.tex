@@ -1,6 +1,6 @@
 %!TeX TXS-program:bibliography = txs:///biber
-\documentclass[10pt,letterpaper]{article}
-\usepackage[latin1]{inputenc}
+\documentclass[research,19]{idcc}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{hyperref}
@@ -15,7 +15,10 @@
 
 \input{acrodefs.tex}
 %\usepackage{natbib}
-\usepackage[sorting=nyt,maxnames=10,backend=biber]{biblatex}
+%\usepackage[sorting=nyt,maxnames=10,backend=biber]{biblatex}
+\usepackage[style=apa,backend=biber]{biblatex}
+%\DeclareLanguageMapping{american}{american-apa}
+\DeclareLanguageMapping{british}{british-apa}
 \addbibresource{references.bib}
 \addbibresource{references-zotero.bib}
 
@@ -23,10 +26,23 @@
 %\newcommand{\urlcite}[2]{\href{#1}{#2}
 \newcommand{\urlcite}[2]{#2\footnote{\url{#1}}}
 
-\author{Lars Vilhuber and Carl Lagoze}
-\title{Supplementary Materials}
+%
+% Metadata
+\author{Carl Lagoze}
+\affil{University of Michigan}
+\author{Lars Vilhuber}
+\affil{Cornell University}
+\correspondence{Lars Vilhuber. Email: \email{lars.vilhuber@cornell.edu}}
+\title{A metadata package for journals to support external linked objects}
+
+%\conference{14th International Digital Curation Conference}
+\submitted{June 2018}
+
+
+
 \begin{document}
-	
+\maketitle
+
 \begin{abstract}
 	\input{abstract}
 \end{abstract}
