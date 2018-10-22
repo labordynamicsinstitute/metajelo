@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+
+<lst name="responseHeader">
+  <int name="status">0</int>
+  <int name="QTime">10</int>
+</lst>
+<result name="response" numFound="1" start="0">
+  <doc>
+    <str name="datacentre">GESIS.ICPSR - ICPSR</str>
+    <str name="doi">10.3886/E100590V1</str>
+    <arr name="creator">
+      <str>McKinney, Kevin L.</str>
+      <str>Green, Andrew S.</str>
+      <str>Vilhuber, Lars</str>
+      <str>Abowd, John M.</str>
+      <str>Abowd, John M.</str>
+    </arr>
+    <arr name="title">
+      <str>Replication data: Total Error and Variability Measures 
+      	for QWI and LODES</str>
+    </arr>
+    <str name="publisher">ICPSR - Interuniversity Consortium for 
+    	Political and Social Research</str>
+    <str name="publicationYear">2017</str></doc>
+</result>
+<head/></response>

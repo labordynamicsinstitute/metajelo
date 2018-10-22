@@ -1,0 +1,85 @@
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>10/8/18 11:48 AM</responseDate><request verb="GetRecord">http://www.icpsr.umich.edu/icpsrweb/ICPSR/oai/studies</request><GetRecord><record><header><identifier>100590</identifier><datestamp>Oct 8, 2018</datestamp></header><metadata><codeBookType xmlns:ns2="http://purl.org/dc/elements/1.1/" xmlns:ns4="ddi:codebook:2_5" xmlns:ns3="http://purl.org/dc/terms/">
+    <ns4:docDscr>
+        <ns4:citation>
+            <ns4:titlStmt>
+                <ns4:titl></ns4:titl>
+                <ns4:IDNo agency="ICPSR">100590</ns4:IDNo>
+            </ns4:titlStmt>
+            <ns4:prodStmt>
+                <ns4:producer abbr="ICPSR">Inter-university Consortium for Political and Social Research</ns4:producer>
+                <ns4:copyright>ICPSR metadata records are licensed under a Creative Commons Attribution-Noncommercial 3.0 United States License.</ns4:copyright>
+            </ns4:prodStmt>
+            <ns4:verStmt>
+                <ns4:version date="Mon Oct 08 11:48:14 EDT 2018">Mon Oct 08 11:48:14 EDT 2018</ns4:version>
+            </ns4:verStmt>
+            <ns4:holdings>URI=&quot;https://www.icpsr.umich.edu/icpsrweb/ICPSR/ddi25/100590&quot;</ns4:holdings>
+        </ns4:citation>
+    </ns4:docDscr>
+    <ns4:stdyDscr>
+        <ns4:citation>
+            <ns4:titlStmt>
+                <ns4:titl></ns4:titl>
+                <ns4:IDNo agency="ICPSR">100590</ns4:IDNo>
+            </ns4:titlStmt>
+            <ns4:rspStmt>
+                <ns4:AuthEnty affiliation="RAND">Kevin L. McKinney, United States Department of Commerce. Bureau of the Census</ns4:AuthEnty>
+                <ns4:AuthEnty affiliation="RAND">Andrew S. Green, Cornell University</ns4:AuthEnty>
+                <ns4:AuthEnty affiliation="RAND">Lars Vilhuber, Cornell University</ns4:AuthEnty>
+                <ns4:AuthEnty affiliation="RAND">John M. Abowd, Cornell University</ns4:AuthEnty>
+                <ns4:AuthEnty affiliation="RAND">John M. Abowd, United States Department of Commerce. Bureau of the Census</ns4:AuthEnty>
+            </ns4:rspStmt>
+            <ns4:prodStmt>
+                <ns4:producer>Please see full citation.</ns4:producer>
+                <ns4:fundAg>[https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/zaaYK, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/OyL0z, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/PYWGJ, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/wbBj0, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/q19Ct, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/4AVqY, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/qYDhF, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/8KDBX, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/KKrmo]</ns4:fundAg>
+                <ns4:grantNo agency="[https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/zaaYK, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/OyL0z, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/PYWGJ, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/wbBj0, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/q19Ct, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/4AVqY, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/qYDhF, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/8KDBX, https://fedora.prod.icpsr.umich.edu/fedora/rest/openicpsr/100590/fundingSource/KKrmo]"/>
+            </ns4:prodStmt>
+            <ns4:distStmt>
+                <ns4:depositr>Ann Arbor, MI: Inter-university Consortium for Political and Social Research</ns4:depositr>
+                <ns4:depDate date="2018-10-09"/>
+            </ns4:distStmt>
+            <ns4:serStmt>
+                <ns4:serInfo xsi:type="ns4:serNameType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></ns4:serInfo>
+            </ns4:serStmt>
+            <ns4:biblCit></ns4:biblCit>
+            <ns4:holdings>URI=&quot;https://www.icpsr.umich.edu/icpsrweb/ICPSR/ddi25/100590&quot;</ns4:holdings>
+        </ns4:citation>
+        <ns4:stdyInfo>
+            <ns4:subject>
+                <ns4:keyword vocab="thesaurus">employment~~earnings~~multiple imputation~~total quality measures~~</ns4:keyword>
+            </ns4:subject>
+            <ns4:abstract contentType="&lt;p&gt;We report results from the first comprehensive total quality evaluation of five&amp;nbsp;major indicators in the U.S. Census Bureau’s Longitudinal Employer-Household Dynamics (LEHD) Program Quarterly Workforce Indicators (QWI): total employment&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;&amp;nbsp;beginning-of-quarter employment&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;full-quarter employment&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;total payroll&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;and average&amp;nbsp;monthly earnings of full-quarter employees. These are the data that were produced for those five indicators.&lt;br&gt;&lt;h3&gt;Note&lt;/h3&gt;&lt;div&gt;Data for all states except Massachusetts and Texas are available. See README.txt for details on available files.&lt;br&gt;&lt;/div&gt;&lt;h3&gt;Disclaimer &lt;br&gt;&lt;/h3&gt;Any opinions and conclusions expressed herein are those of the authors and do not necessarily represent the views of the U.S. Census Bureau. All results have been reviewed to ensure that no confidential information is disclosed (DRB request dated 2013-11-22&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;submitted 2013-12-02&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;approved 2013-12-17&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;ARTS445/ CMS538).&lt;br&gt;&lt;h3&gt;Acknowledgements&lt;/h3&gt;Abowd and Vilhuber acknowledge direct support from the U.S. Census 
+Bureau (prior to Abowd’s appointment) and NSF Grants SES-0922005&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;BCS 
+0941226&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;TC-1012593&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;and SES-1131848. This research uses data from the 
+U.S. Census Bureau’s Longitudinal Employer-Household Dynamics Program&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;which was partially supported by the following National Science 
+Foundation Grants: SES-9978093&lt;/p&gt;"/>
+            <ns4:abstract contentType="&lt;p&gt;SES-0339191 and ITR-0427889; National 
+Institute on Aging Grant AG018854; and grants from the Alfred P. Sloan 
+Foundation. &lt;br&gt;&lt;/p&gt;"/>
+            <ns4:sumDscr>
+                <ns4:timePrd></ns4:timePrd>
+                <ns4:collDate></ns4:collDate>
+                <ns4:nation>Please see geographic coverage.</ns4:nation>
+                <ns4:geogCover>United States of America</ns4:geogCover>
+                <ns4:anlyUnit>Counties of the United States</ns4:anlyUnit>
+                <ns4:universe>Workers covered by Unemployment Insurance&lt;br&gt;</ns4:universe>
+            </ns4:sumDscr>
+        </ns4:stdyInfo>
+        <ns4:method>
+            <ns4:notes></ns4:notes>
+            <ns4:anlyInfo>
+                <ns4:respRate></ns4:respRate>
+            </ns4:anlyInfo>
+        </ns4:method>
+    </ns4:stdyDscr>
+</codeBookType></metadata></record></GetRecord></OAI-PMH>

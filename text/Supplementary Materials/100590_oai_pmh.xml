@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<oai_dc:oaipmHtype xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns3="http://www.openarchives.org/OAI/2.0/oai_dc/">
+    <oai_dc:responseDate>2018-10-08T11:48:09</oai_dc:responseDate>
+    <oai_dc:request verb="GetRecord" set="https://www.icpsr.umich.edu/icpsrweb/ICPSR/oai/studies"/>
+    <oai_dc:GetRecord>
+        <oai_dc:record>
+            <oai_dc:header>
+                <oai_dc:identifier>100590</oai_dc:identifier>
+                <oai_dc:datestamp>Mon Oct 08 11:48:09 EDT 2018</oai_dc:datestamp>
+            </oai_dc:header>
+            <oai_dc:metadata>
+                <dc:oaiDcType>
+                    <dc:title>Replication data: Total Error and Variability Measures for QWI and LODES</dc:title>
+                    <dc:creator>Kevin L. McKinney, United States Department of Commerce. Bureau of the Census</dc:creator>
+                    <dc:creator>Andrew S. Green, Cornell University</dc:creator>
+                    <dc:creator>Lars Vilhuber, Cornell University</dc:creator>
+                    <dc:creator>John M. Abowd, Cornell University</dc:creator>
+                    <dc:creator>John M. Abowd, United States Department of Commerce. Bureau of the Census</dc:creator>
+                    <dc:identifier>100590</dc:identifier>
+                    <dc:identifier>https://doi.org/10.3886/E100590V1</dc:identifier>
+                    <dc:date>2017-12-15</dc:date>
+                    <dc:description>We report results from the first comprehensive total quality evaluation of five&amp;nbsp;major indicators in the U.S. Census Bureau’s Longitudinal Employer-Household Dynamics (LEHD) Program Quarterly Workforce Indicators (QWI): total employment,&amp;nbsp;beginning-of-quarter employment, full-quarter employment, total payroll, and average&amp;nbsp;monthly earnings of full-quarter employees. These are the data that were produced for those five indicators.&lt;br&gt;&lt;h3&gt;Note&lt;/h3&gt;&lt;div&gt;Data for all states except Massachusetts and Texas are available. See README.txt for details on available files.&lt;br&gt;&lt;/div&gt;&lt;h3&gt;Disclaimer &lt;br&gt;&lt;/h3&gt;Any opinions and conclusions expressed herein are those of the authors and do not necessarily represent the views of the U.S. Census Bureau. All results have been reviewed to ensure that no confidential information is disclosed (DRB request dated 2013-11-22, submitted 2013-12-02, approved 2013-12-17, ARTS445/ CMS538).&lt;br&gt;&lt;h3&gt;Acknowledgements&lt;/h3&gt;Abowd and Vilhuber acknowledge direct support from the U.S. Census 
+Bureau (prior to Abowd’s appointment) and NSF Grants SES-0922005, BCS 
+0941226, TC-1012593, and SES-1131848. This research uses data from the 
+U.S. Census Bureau’s Longitudinal Employer-Household Dynamics Program, 
+which was partially supported by the following National Science 
+Foundation Grants: SES-9978093, SES-0339191 and ITR-0427889; National 
+Institute on Aging Grant AG018854; and grants from the Alfred P. Sloan 
+Foundation. &lt;br&gt;</dc:description>
+                    <dc:subject>employment~~earnings~~multiple imputation~~total quality measures~~</dc:subject>
+                    <dc:coverage>United States of America</dc:coverage>
+                    <dc:coverage></dc:coverage>
+                    <dc:type></dc:type>
+                    <dc:source>United States Census Bureau: Quarterly Workforce Indicators and United States Census Bureau: Longitudinal Employer-Household Dynamics Data</dc:source>
+                </dc:oaiDcType>
+            </oai_dc:metadata>
+        </oai_dc:record>
+    </oai_dc:GetRecord>
+</oai_dc:oaipmHtype>
