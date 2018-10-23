@@ -24,7 +24,7 @@ pkgTest <- function(x)
 	return("OK")
 }
 
-global.libraries <- c("rcrossref","roadoi","dplyr","devtools","rprojroot","tictoc","rdatacite")
+global.libraries <- c("rcrossref","roadoi","dplyr","devtools","rprojroot","tictoc","rdatacite","knitr","tibble")
 results <- sapply(as.list(global.libraries), pkgTest)
 ```
 
@@ -33,11 +33,11 @@ results <- sapply(as.list(global.libraries), pkgTest)
 We picked a few DOIs where we know that reasonable data exists.
 ```{r set_dois, cache=TRUE}
 # select DOIs
-dois = c("10.3886/E100590V1","10.3886/ICPSR21600.v21")
+dois = c("10.3886/E100590V1","10.3886/ICPSR21600.v21","10.5281/zenodo.1306968","10.5281/zenodo.556121")
 refs <- rcrossref::cr_cn(dois,format = "text")
 ```
 
-### Article 1
+### Archive 1
 The first one is an openICPSR deposit:
 
 ```{r,results='markup'}
@@ -71,7 +71,13 @@ even though the website lists a license:
 
 ![openICPSR license display](../text/images/openicpsr-license-image.png)
 
-### Article 2
+
+
+
+
+
+
+### Archive 2
 The second deposit was picked because it it the most downloaded dataset as of 2018-10-22: 
 
 ```{r,echo=FALSE,results='markup'}
@@ -100,4 +106,75 @@ dc.2.df <- dc.2.attributes[c("license")] %>%
 knitr::kable(dc.2.df, col.names = c("Attribute","Value"))
 ```
 
-Clearly, ICPSR uses a common registration mechanism both for uncurated open deposits (openICPSR) and formal curated archives (ICPSR). 
+Clearly, ICPSR uses a common registration mechanism both for uncurated open deposits (openICPSR) and formal curated archives (ICPSR). So let's explore a different archive.
+
+
+
+
+
+## Archive 3
+The third deposit was picked because it is in a different archive (and we know the creators):
+
+```{r,echo=FALSE,results='markup'}
+knitr::kable(unlist(refs[3]),col.names = "Dataset:")
+```
+```{r get_cite3, cache=TRUE}
+dc.3 <- dc_work(doi = dois[3])
+```
+The archive's name is  listed as
+```{r cite3,results='markup'}
+# Easier to work with
+dc.3.attributes <- dc.3$data$attributes
+dc.3.df <- dc.3.attributes[c("container-title","data-center-id")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.3.df, col.names = c("Attribute","Value"))
+```
+
+The license is  listed as
+```{r license3,results='markup'}
+dc.3.df <- dc.3.attributes[c("license")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.3.df, col.names = c("Attribute","Value"))
+```
+
+which corresponds to the license listed on the website (there is no default license on Zenodo). 
+
+
+
+
+
+
+## Archive 4
+The fourth deposit was picked because it has a restrictive license (and we know the creators):
+
+```{r,echo=FALSE,results='markup'}
+knitr::kable(unlist(refs[4]),col.names = "Dataset:")
+```
+```{r get_cite4, cache=TRUE}
+dc.4 <- dc_work(doi = dois[4])
+```
+The archive's name is  listed as
+```{r cite4,results='markup'}
+# Easier to work with
+dc.4.attributes <- dc.4$data$attributes
+dc.4.df <- dc.4.attributes[c("container-title","data-center-id")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.4.df, col.names = c("Attribute","Value"))
+```
+
+The license is  listed as
+```{r license4,results='markup'}
+dc.4.df <- dc.4.attributes[c("license")] %>% 
+	t() %>% t() %>% 
+	as.data.frame()%>% 
+	tibble::rownames_to_column() 
+knitr::kable(dc.4.df, col.names = c("Attribute","Value"))
+```
+
+When a Zenodo deposit is restricted, it has no license attribute (and none is shown on the website). 
