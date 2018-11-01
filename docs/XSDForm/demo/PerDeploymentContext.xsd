@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/PerDeploymentContext"
+    xmlns:tns="http://localhost/PerDeploymentContext" elementFormDefault="qualified" >
+
+	<element name="PerDeploymentData" type="PerDeploymentDataType" >
+	</element>
+	
+	<complexType name="PerDeploymentDataType">
+		<sequence>
+			<element name="Configuration" type="ConfigurationType" />
+			<element name="LDAPServers" type="LDAPServersType" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="ServerSelectionMethodType">
+		<restriction base="string">
+			<enumeration value="Round Robin" />
+			<enumeration value="Local First" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="ConfigurationType">
+		<sequence>
+			<element name="serviceName" type="string">
+				<annotation>
+					<documentation xml:lang="en">
+						Service name
+					</documentation>
+				</annotation>
+			</element>
+			<element name="serverSelectionMethod" type="ServerSelectionMethodType" />
+		</sequence>
+	</complexType>
+
+	<complexType name="LDAPServerType">
+		<sequence>
+
+			<element name="name" type="string">
+				<annotation>
+					<documentation xml:lang="en">
+						Server configuration
+						name
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="serverLocation" type="ServerLocationType"
+				default="Local">
+				<annotation>
+					<documentation xml:lang="en">
+						Whether local or
+						remote.
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="host" type="string">
+				<annotation>
+					<documentation xml:lang="en">
+						LDAP host to connect
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="port" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Connection port
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="loginDn" type="string">
+				<annotation>
+					<documentation xml:lang="en">
+						Login name
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="password" type="string">
+				<annotation>
+					<documentation xml:lang="en">
+						Password
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="maxConns" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Maximum number of
+						TCP
+						connections allowed for this host 
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="maxSharedConns" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Maximum number of
+						asynchronous, shared connections per TCP connection
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="minBoundConns" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Minimum number of
+						bound
+						connections allowed for this host
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="reconnectionAttempts" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						When disconnect is
+						detected on bound connection, number of attempts to reconnect.
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="reconnectionAttemptInterval" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Interval in seconds at
+						which successive re-connections are attempted.
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="connectionSelectionMethod" type="ConnectionSelectionMethodType"
+				default="Round Robin">
+				<annotation>
+					<documentation xml:lang="en">
+						Connection selection
+						method
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="connectionAuditInterval" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Interval in seconds at
+						which connections are audited for expirations and closures. Zero
+						indicates no audit.
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="expiredConnectionInterval" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Interval in seconds at
+						which connections are considered to be expired and should be
+						closed by the connection audit. Zero indicates no expiration.
+					</documentation>
+				</annotation>
+			</element>
+
+			<element name="socketTimeout" type="int">
+				<annotation>
+					<documentation xml:lang="en">
+						Maximum number of
+						milliseconds to wait for server response to requested operation.
+					</documentation>
+				</annotation>
+			</element>
+
+		</sequence>
+	</complexType>
+
+	<simpleType name="ServerLocationType">
+		<restriction base="string">
+			<enumeration value="Local" />
+			<enumeration value="Remote" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ConnectionSelectionMethodType">
+		<restriction base="string">
+			<enumeration value="Round Robin" />
+			<enumeration value="First Available" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="LDAPServersType">
+		<sequence>
+			<element name="ldapServer" type="LDAPServerType" minOccurs="1"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+</schema>
+	
