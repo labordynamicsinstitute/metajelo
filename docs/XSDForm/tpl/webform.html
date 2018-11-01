@@ -1,9 +1,0 @@
-{if="$integration=='standalone'"}<form id='xmlForm' action='{$action}' method='post'>
-{/if}
-<input id='xmlContent' type='hidden' name='xmlContent' value='' />
-<input id='xmlContentRootTypeName' type='hidden' name='xmlContentRootTypeName' value='{$rootElementTypeNameOnForm}' />
-<input id='xmlFormIdentifier' type='hidden' name='xmlFormIdentifier' value='{$formIdentifier}' />
-<input id='xmlContentRootElementName' type='hidden' name='xmlContentRootElementName' value='{$rootElementName}' />
-{$formContent} 
-{if="$integration=='standalone'"}<hr/><input value="SEND" type='button' onClick="getXMLContent(this.form);"/></form>
-{/if}
