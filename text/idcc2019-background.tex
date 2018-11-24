@@ -1,0 +1,76 @@
+In most applied sciences,
+it has become common publication practice to provide evidence of the
+statistical or laboratory data underlying the conclusions. This is done
+to support reproducibility and replicability of the scientific
+findings.%
+\footnote{There is considerable heterogeneity in the use of the terms
+	``reproducibility'' and ``replicability''. In this paper, we will adopt
+	the following definitions: reproducibility is ``the ability of a
+	researcher to duplicate the results of a prior study using the same
+	materials and procedures as were used by the original investigator,''
+	\parencite{BollenSocialBehavioralEconomic2015} whereas replicability
+	differs in that ``new data are collected.'' (ibidem).} 
+Journals with a
+data deposit policy have stored the supplementary materials on journal
+websites, often as simple web-based ZIP archives. While ensuring that
+the materials are preserved as long as the journal is active
+(permanence) and are accessible to any reader of the original article
+(subject to pay walls) (accessibility), certain shortcomings became
+apparent. Very large datasets and datasets with confidentiality concerns
+were nearly always out of scope. 
+
+More recently, journals have leveraged
+either dedicated, journal-branded views onto larger archives (e.g,
+Dataverse, Figshare), built their own data archive infrastructure
+(\urlcite{https://www.elsevier.com/authors/author-services/research-data}{Elsevier/Mendeley}), or have allowed for data and code to be stored
+more generally on any of a curated list of ``trusted'' or ``approved''
+whitelist of third-party repositories.%
+\footnote{\url{https://f1000research.com/for-authors/data-guidelines}, \url{https://www.nature.com/sdata/policies/repositories}}
+Each of these alternatives rely
+on a journal or publisher ``vetting'' the repositories and ascertaining
+that it meets some set of criteria.  While some third-party vetting of
+repositories exists,%
+\footnote{CoreTrustSeal, \url{https://www.coretrustseal.org/}}
+it is far from being universally accepted at this
+time. 
+
+In all cases known to us, the support for restricted-access
+repositories is quite limited. Thus, most of the known support for
+third-party repositories does not provide much information about
+accessibility (the presumption is that access is open), nor about the
+permanence of the repositories - this is presumably one of the
+evaluation criteria that journals and publishers use, but is not clearly
+defined as such. In fact, at least one of the consulted publishers
+explicitly allows for quite transitory repositories for code, without
+clearly distinguishing that from archives that are more permanent.%
+\footnote{F1000Research (\url{https://f1000research.com/for-authors/data-guidelines}) allows for code deposits through github.com, which has no mandate to preserve, and allows code owners to delete materials at any time without restrictions.}
+
+Nevertheless, much of the information about persistence of archives and
+materials stored within those archives is available, albeit in
+idiosyncratic and non-machine readable form. Consider only the case of
+national archives (e.g., the \urlcite{https://www.archives.gov/dc/researcher-info}{U.S. National Archives} or the \urlcite{http://www.archives-nationales.culture.gouv.fr/}{\textit{Archives Nationales} in France}). 
+In general, data stored in national archives is
+permanently archived; if it is not, this is clearly documented.%
+\footnote{For instance, the program code for the Business Register is destroyed when a new system is put in place - they are never kept \parencite{U.S.CensusBureauRecordsControlSchedule2009}. Unedited master files for the American Community Survey are destroyed 6 years after the Edited master files are verified, unless still needed ``for Census operations'' \parencite{U.S.CensusBureauRecordsControlSchedule1999}.}
+Furthermore, access is generally not restricted - if it is, this is
+clearly documented. However, materials in national archives do have
+certain restrictions - they may require sending in a written request, or
+a physical visit to a location with copies of the data. Thus, while the
+information may satisfy the publication requirements of even the most
+open journal, there is no robust and standardized way of documenting the
+additional restrictions on access that persist. 
+
+In proposing the
+metadata package outlined in this article, we attempt to improve on this
+situation. By providing a sparse but sufficient encapsulation of the
+information collected from authors, archives, and other third-parties,
+we create greater transparency about the data supporting the research.
+By relying on existing metadata schemas and metadata content, we
+minimize the effort by all parties involved, increasing the likelihood
+of adoption. And by intrinsically addressing the possibility that the
+information obtained at the time of publication may differ from later
+requests for the same information, we provide the tools to journals,
+publishers, and their editors to document that the decision to publish
+was based on adequate information at the time of the publication (or
+acceptance decision).
+

@@ -12,6 +12,7 @@
 }
 \usepackage{float}
 \usepackage{acronym}
+\usepackage{setspace}
 
 \input{acrodefs.tex}
 %\usepackage{natbib}
@@ -51,6 +52,10 @@
 \label{sec:intro}
 \input{idcc2019-introduction}
 
+\section{Background}
+\label{sec:background}
+\input{idcc2019-background.tex}
+
 \section{Use Case}
 \label{sec:usecase}
 \input{idcc2019-usecase}
@@ -76,4 +81,10 @@
 %\bibliography{references.bib}
 \printbibliography
 
+
+\appendix
+
+\section{Full Data Cite Query for Use Case 1}
+\label{app:case1}
+\lstinputlisting[language=xml]{supplementary_materials/datacite-api-100590.xml}
 \end{document}
