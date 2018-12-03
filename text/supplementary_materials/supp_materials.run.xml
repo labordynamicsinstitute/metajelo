@@ -41,7 +41,7 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
       <file>supp_materials.bcf</file>
@@ -79,7 +79,8 @@
       <file>supp_materials.bcf</file>
     </requires>
     <requires type="editable">
-      <file>references.bib</file>
+      <file>../references-zotero.bib</file>
+      <file>../references.bib</file>
     </requires>
   </external>
 </requests>
