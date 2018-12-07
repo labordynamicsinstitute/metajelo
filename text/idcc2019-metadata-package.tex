@@ -13,7 +13,7 @@ The full annotated schema is available for examination online at \href{https://g
 \setlength{\tabcolsep}{2.5pt},%
 /csv/after reading=\normalsize,%
 /csv/head to column names=true,%
-/csv/longtable=L{0.1\textwidth}L{0.25\textwidth}L{0.3\textwidth}L{0.2\textwidth}L{0.1\textwidth},
+/csv/longtable=L{0.13\textwidth}L{0.25\textwidth}L{0.3\textwidth}L{0.2\textwidth}L{0.1\textwidth},
 /csv/table head=%
  \multicolumn{5}{c}{Table~\thetable : \metajelo Description\label{tab:desc:metajelo}}\\%
  \hline \bf ID & \bf Field &\bf Definition & \bf Notes &\\\hline\endfirsthead%
@@ -28,3 +28,4 @@ table foot=\hline%
 	\id &\field &\description &  \comment & \source 
 }
 
+We highlight a few key elements. First, much of the information about the object itself mirrors the DataCite schema \parencite{DataCiteMetadataWorkingGroupDataCiteMetadataSchema2017,DataCiteMetadataWorkingGroupDataCiteMetadataSchema2017a}, even if no \ac{DOI} exists. The bibliographic metadata schema is based on DataCite for simplicity, and is always required. Much of the information on the institution, including its policies, mirrors the re3data schema \parencite{Re3data.Orgre3dataorgMetadata2015,RucknagelMetadataSchemaDescription2015}, with much simplification. In particular, we are interested primarily in \texttt{policyType="Preservation Policy"} and \texttt{policyType="Terms of Use"}. In contrast with the re3data schema, we have merged licenses into the same repeatable element, so that \texttt{policyType="License"} is a valid option. In all cases, we also allow for verbatim capture of the text of the policy, since policies posted on websites, and not versioned, may change over time. We envision either manual entry by the researcher, or webscraping of the provided policy \ac{URL} to populate this field.

@@ -1,7 +1,7 @@
+In all use cases, we attempt to identify the three attributes outlined in the main text, using automated mechanisms.
 
-
-\section{Scenario 1: Public-use information at openICPSR}
-In the first case, the researcher has  used public-use data, and identifies a \ac{DOI} to the journal (\url{http://doi.org/10.3886/E100590V1}). From this \ac{DOI}, the journal will attempt to identify the three attributes outlined above, using automated mechanisms. We thus start with the \ac{DOI}, which resolves to the following citation:
+\section{Use Case 1: Public-use information at openICPSR}
+In the first case, the researcher has  used public-use data, and identifies a \ac{DOI} to the journal (\url{http://doi.org/10.3886/E100590V1}).  We thus start with the \ac{DOI}, which resolves to the following citation:
 
 \lstset{numbers=left,numberstyle=\tiny,stepnumber=1,basicstyle=\linespread{0.8}\footnotesize}
 \begin{quote}
@@ -10,7 +10,7 @@ In the first case, the researcher has  used public-use data, and identifies a \a
 \end{quote}
 
 %We note that this dataset, as all current openICPSR datasets, is licensed under a \href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International License}. 
-
+\FloatBarrier
 \paragraph{DataCite}
 
 We first query the DataCite API (Figure~\ref{fig:case1:datacite}).
@@ -39,8 +39,8 @@ The re3data record lists three types of data access. Furthermore, three data lic
 Thus, while re3data does contain entries of \textit{possible} licenses, we have no information on which one applies to the replication package above. Furthermore (not displayed here), there is no machine-readable information on persistence. While knowledgable data archivists and librarians, as well as many social scientists, ``know'' that ICPSR is a reputable archive with a long history and presumably a long future, this is not encoded anywhere where non-domain experts could ascertain it.
 
 \paragraph{CoreTrustSeal}
-We do not investigate whether this information is available on through CoreTrustSeal, for three reasons. First, searching again, as we did, through the website, neither of the search terms that the DataCite record provides yield findable results. Second, when we manually identify ICPSR on the website's map of institutions, we observe that ICPSR had a ``Data Seal of Approval'' (the predecessor to CoreTrustSeal), but that it expired in 2017, which may explain the lack of search results. Finally, the CoreTrustSeal certification is encapsulated in PDFs, and does not provide an API to search for attributes of a certified repository. While it may be feasible for a human to track down the relevant information, it is not scalable.
-
+We do not investigate whether this information is available  through CoreTrustSeal, for three reasons. First, searching again, as we did, through the website, neither of the search terms that the DataCite record provides yield findable results. Second, when we manually identify ICPSR on the website's map of institutions, we observe that ICPSR had a ``Data Seal of Approval'' (the predecessor to CoreTrustSeal), but that it expired in 2017, which may explain the lack of search results. Finally, the CoreTrustSeal certification is encapsulated in PDFs, and does not provide an API to search for attributes of a certified repository. While it may be feasible for a human to track down the relevant information, it is not scalable.
+\FloatBarrier
 \paragraph{Data publisher website}
 \newcommand{\icpsrdate}{8 October 2018}
 \begin{figure}
@@ -72,7 +72,7 @@ We note that DataCite, while providing a means to communicate the license, did n
 
 In this relatively straightforward case, we would need to query the user  about  which access policy applies to the particular dataset at hand. 
 
-\section{Scenario 2: restricted-access PSID}
+\section{Use Case 2: Restricted-access PSID}
 The \ac{PSID} has published data for several decades, and is widely used (several thousand articles). Currently, researchers access the data by downloading them from the \ac{PSID} website, if the data is public-use. \ac{PSID} also provides some restricted access files, for instance with more detailed geocodes. Access procedures are described at \url{https://simba.isr.umich.edu/restricted/ProcessReq.aspx}. The \ac{PSID} has not assigned \ac{DOI} to any of its data products. Personal communication reveals that both public-use and restricted-access data are versioned internally, and that the data themselves contain a variable with the versioning information; there is, however, no metadata on the website listing the available past datasets, only the most current one. There is no explicit retention information on the website.
 
 In this scenario, 
@@ -83,9 +83,9 @@ In this scenario,
 \end{itemize}
 We also note that even if re3data had the correct access policy for 2018, it is difficult to obtain information on past access policies. The \ac{PSID} used to provide restricted-access data via shipment of CDs to researchers, who would put the data on computers that were not connected to networks, secured in a locked room. Authors are still publishing articles today that rely on data obtained through the outdated access mode. 
 
-\section{Scenario 3: Restricted access at the U.S. Census Bureau}
+\section{Use Case 3: Restricted access at the U.S. Census Bureau}
 
-The \urlcite{https://www.census.gov/ces/dataproducts/datasets/lbd.html}{Longitudinal Business Database} (LBD) data at the U.S. Census Bureau is one of the most requested datasets in the \ac{FSRDC} network. Access procedures are described at various locations, including \urlcite{https://www.census.gov/ces/rdcresearch/index.html}{here} and \urlcite{https://www.census.gov/ces/rdcresearch/howtoapply.html}{here}. The LBD data, as most business data at the U.S. Census Bureau, contain \ac{FTI}; however, this is not noted on the product description page. In contrast to many person or household data, which are archived at the National Archives as per a published Records Schedule, the business data are not sent to the National Archives, due to the presence of said \ac{FTI}. It is quite difficult to find information on this. In fact, the Center for Economic Studies is the official archiver, and maintains these files in perpetuity. The Census Bureau has not assigned \ac{DOI} to any of its data assets as of 2018.
+The \ac{LBD} data \parencite{MirandaJarmin2002,LBD}  at the U.S. Census Bureau is one of the most requested datasets in the \ac{FSRDC} network. Access procedures are described at various locations, including \urlcite{https://www.census.gov/ces/rdcresearch/index.html}{here} and \urlcite{https://www.census.gov/ces/rdcresearch/howtoapply.html}{here}. The LBD data, as most business data at the U.S. Census Bureau, contain \ac{FTI}; however, this is not noted on the product description page. In contrast to many person or household data, which are archived at the National Archives as per a published Records Schedule, the business data are not sent to the National Archives, due to the presence of said \ac{FTI}. It is quite difficult to find information on this. In fact, the Center for Economic Studies is the official archiver, and maintains these files in perpetuity. The Census Bureau has not assigned \ac{DOI} to any of its data assets as of 2018.
 
 
 In this scenario, 
