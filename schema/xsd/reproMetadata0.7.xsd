@@ -263,35 +263,34 @@
 		<xs:attribute name="policyType" type="policyTypes"/>
 		<xs:attribute name="appliesToProduct" type="xs:boolean">
 			<xs:annotation>
-				<xs:documentation>appliesToProduct is true for policies that apply to this product</xs:documentation>
+				<xs:documentation>appliesToProduct is true for policies that apply to this
+					product</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
 
 	<xs:complexType name="supplementaryProductType">
 		<xs:sequence>
-			<xs:choice>
-				<xs:element name="basicMetadata">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Title" type="xs:string"/>
-							<xs:element name="Creator" type="xs:string"/>
-							<xs:element name="date" type="xs:date"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="productID">
-					<xs:complexType>
-						<xs:simpleContent>
-							<xs:extension base="xs:string">
-								<xs:attribute name="relatedIdentifierType" type="identifierType"
-									use="required"/>
-							</xs:extension>
-						</xs:simpleContent>
-					</xs:complexType>
-				</xs:element>
-			</xs:choice>
-			<xs:element name="productType">
+			<xs:element name="basicMetadata">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Title" type="xs:string"/>
+						<xs:element name="Creator" type="xs:string"/>
+						<xs:element name="date" type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="resourceID" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="relatedIdentifierType" type="identifierType"
+								use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="resourceType">
 				<xs:annotation>
 					<xs:documentation>The type of the supplementary product. You may enter an
 						additional free text description.</xs:documentation>
@@ -324,7 +323,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="productMetadataSource" minOccurs="0" maxOccurs="1">
+			<xs:element name="resourceMetadataSource" minOccurs="0" maxOccurs="1">
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="xs:anyURI">
