@@ -13,7 +13,7 @@ In the first case, the researcher has  used public-use data, and identifies a \a
 \FloatBarrier
 \paragraph{DataCite}
 
-We first query the DataCite API (Figure~\ref{fig:case1:datacite}).
+We first query the DataCite API. A subset of the response is depicted in Figure~\ref{fig:case1:datacite} (emphasis added).
 \begin{figure}
 	\singlespacing
 	\lstinputlisting[language=xml,linerange=1-1]{\suppDir/datacite-api-100590.xml}
@@ -24,7 +24,7 @@ We first query the DataCite API (Figure~\ref{fig:case1:datacite}).
 	\lstinputlisting[language=xml,linerange=23-24,firstnumber=23,basicstyle=\bfseries\footnotesize]{\suppDir/datacite-api-100590.xml}
 	\caption{Select lines from DataCite query for DOI 10.3886/E100590V1}
 	\label{fig:case1:datacite}
-	\centering \footnotesize The full query response can be found in the appendix.
+	%\centering \footnotesize The full query response can be found in the appendix.
 \end{figure}
 %
 The query reveals the identity of the \texttt{datacentre} and the \texttt{publisher}. However, there is no information on the license under which the object is made available, no copyright, license, or terms of use information, nor any information on persistence of the data. The \texttt{license} attribute is optional as per DataCite Schema \parencite{DataCiteMetadataWorkingGroupDataCiteMetadataSchema2017}, and is empty here.

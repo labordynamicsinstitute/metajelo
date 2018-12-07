@@ -33,11 +33,19 @@
 \SetWatermarkScale{0.3}
 }{}
 
-
+% to read the table
 \usepackage{csvsimple}
 \usepackage{longtable}
+% for adding a flex space to the metajelo macro
 \usepackage{xspace}
+% to adjust floats
 \usepackage{placeins}
+% for hyphenating the TT font in the table
+\usepackage[htt]{hyphenat}
+% better tt font
+\usepackage[scaled=0.8]{beramono}
+\hyphenation{institution-Sustaina-bility super-Organization-Name institutionPolicy-FreeText}
+
 
 \input{acrodefs.tex}
 %\usepackage{natbib}
@@ -136,6 +144,6 @@
 \newcommand{\suppDir}{supplementary_materials}
 \input{\suppDir/usecase-appendix}
 \FloatBarrier
-\section{Appendix: Full query response for Use Case 1}
-\lstinputlisting[language=xml]{\suppDir/datacite-api-100590.xml}
+%\section{Appendix: Full query response for Use Case 1}
+%\lstinputlisting[language=xml]{\suppDir/datacite-api-100590.xml}
 \end{document}
