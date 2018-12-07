@@ -14,10 +14,25 @@
 \usepackage{float}
 \usepackage{acronym}
 \usepackage{setspace}
+\usepackage{etoolbox}
+
+%%% Just comment out one or the other of the "togglefalse/toggletrue" pairs
+
+\newtoggle{final}
+\newtoggle{blind}
+\togglefalse{final}
+%\toggletrue{final}
+\toggletrue{blind}
+%\togglefalse{blind}
+
+
+\iftoggle{blind}{
 \usepackage{draftwatermark}
-\SetWatermarkText{PRE-SUBMISSION \today}
-\SetWatermarkLightness{0.8}
+\SetWatermarkText{blinded \today}
+\SetWatermarkLightness{0.9}
 \SetWatermarkScale{0.3}
+}{}
+
 
 \usepackage{csvsimple}
 \usepackage{longtable}
@@ -51,11 +66,18 @@
 
 %
 % Metadata
+\iftoggle{blind}{
+	\author{AUTHOR}
+	\affil{University}
+	\correspondence{Email: \email{blinded@ijpc.net}}
+}%
+{	% full names only when not blinded
 \author{Carl Lagoze}
 \affil{University of Michigan}
 \author{Lars Vilhuber}
 \affil{Cornell University}
 \correspondence{Lars Vilhuber. Email: \email{lars.vilhuber@cornell.edu}}
+}
 \title{metajelo: A metadata package for journals to support external linked objects}
 
 %\conference{14th International Digital Curation Conference}
@@ -97,7 +119,8 @@
 
 \section{Acknowledgements}
 \label{sec:ack}
-\input{idcc2019-acknowledgements}
+\iftoggle{blind}{[Acknowledgements blinded.]}{
+\input{idcc2019-acknowledgements}}
 
 
 %\bibliographystyle{chicagoa}
