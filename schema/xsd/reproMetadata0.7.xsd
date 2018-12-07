@@ -276,7 +276,7 @@
 					<xs:sequence>
 						<xs:element name="Title" type="xs:string"/>
 						<xs:element name="Creator" type="xs:string"/>
-						<xs:element name="date" type="xs:date"/>
+						<xs:element name="PublicationYear" type="xs:date"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -308,7 +308,7 @@
 					</xs:simpleContent>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="formats" minOccurs="0">
+			<xs:element name="Format" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="format" type="xs:string" minOccurs="0"
