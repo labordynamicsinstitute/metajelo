@@ -1,4 +1,5 @@
 %!TeX TXS-program:bibliography = txs:///biber
+%!TeX program = xelatex
 \documentclass[research,19]{idcc}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -20,11 +21,14 @@
 \input{acrodefs.tex}
 %\usepackage{natbib}
 %\usepackage[sorting=nyt,maxnames=10,backend=biber]{biblatex}
-\usepackage[style=apa,backend=biber]{biblatex}
+\usepackage[style=apa,sortcites,backend=biber,date=year]{biblatex}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
 %\DeclareLanguageMapping{american}{american-apa}
 \DeclareLanguageMapping{british}{british-apa}
 \addbibresource{references.bib}
 \addbibresource{references-zotero.bib}
+\addbibresource{aej-rep.bib}
 
 
 % Table
@@ -78,6 +82,7 @@
 
 \section{Metadata Package}
 \label{sec:metadata-package}
+\label{sec:approach}
 \input{idcc2019-metadata-package}
 
 \section{Usability Notes}
@@ -94,13 +99,14 @@
 \printbibliography
 
 
-\appendix
+%\appendix
 
-\section{Detailed Use Cases}
+\section{Appendix: Detailed Use Cases}
 \label{app:cases}
-\newcommand{\suppDir}{supplementary_masterials}
-\input{\suppDir/idcc2019-usecase-appendix}
 
-\section{Full query response for Use Case 1}
-\lstinputlisting[language=xml]{supplementary_materials/datacite-api-100590.xml}
+\newcommand{\suppDir}{supplementary_materials}
+\input{\suppDir/usecase-appendix}
+
+\section{Appendix: Full query response for Use Case 1}
+\lstinputlisting[language=xml]{\suppDir/datacite-api-100590.xml}
 \end{document}

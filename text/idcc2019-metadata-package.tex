@@ -10,7 +10,8 @@ The full annotated schema is available for examination online at \href{https://g
 %id;field;description;comment;source;larscomment
 \csvreader[/csv/separator=semicolon,/csv/head=true,%
 /csv/before reading=\footnotesize%
-\setlength{\tabcolsep}{2.5pt},
+\setlength{\tabcolsep}{2.5pt},%
+/csv/after reading=\normalsize,%
 /csv/head to column names=true,%
 /csv/longtable=L{0.1\textwidth}L{0.25\textwidth}L{0.3\textwidth}L{0.2\textwidth}L{0.1\textwidth},
 /csv/table head=%
@@ -27,4 +28,3 @@ table foot=\hline%
 	\id &\field &\description &  \comment & \source 
 }
 
-\csvautotabular[/csv/separator=semicolon]{../schema/tabular-metajelo.csv}
