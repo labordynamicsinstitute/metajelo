@@ -6,7 +6,8 @@ The high-level structure of our proposed metadata package is illustrated in the 
 \end{figure} 
 As shown, each package is structured as a record, which conceptually models a linkage between a publication and its supplementary materials.  As shown, a record has an identity (\ac{DOI}), a date created, a last modified date, and the identity (\ac{DOI}) of the research objects (papers) that are associated with the supplementary products.
 Each record then can describe an unlimited number of \texttt{supplementaryProducts}.  Each product has an identifier, a description of its type, licensing information, and linkages to full metadata available elsewhere that fully describes the product.  Each \texttt{supplementaryProduct} has an associated location block, which contains information about the institutional archive at which the respective \texttt{supplementaryProduct} is located.  Finally, for each institution, the set of possible policies are listed, with a boolean designation of the applicability of a policy to the respective supplementary object.   
-The full annotated schema is available for examination online at \href{https://github.com/labordynamicsinstitute/metajelo}{github.com/labordynamicsinstitute/metajelo}.
+The full annotated schema is available for examination online at 
+\iftoggle{blind}{[URL blinded - please contact JOURNAL]}{\href{https://github.com/labordynamicsinstitute/metajelo}{github.com/labordynamicsinstitute/metajelo}}.
 
 %id;field;description;comment;source;larscomment
 \csvreader[/csv/separator=semicolon,/csv/head=true,%
