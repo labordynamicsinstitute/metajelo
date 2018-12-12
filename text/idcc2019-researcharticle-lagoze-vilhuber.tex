@@ -22,8 +22,8 @@
 \newtoggle{blind}
 \togglefalse{final}
 %\toggletrue{final}
-\toggletrue{blind}
-%\togglefalse{blind}
+%\toggletrue{blind}
+\togglefalse{blind}
 
 
 \iftoggle{blind}{
@@ -32,6 +32,15 @@
 \SetWatermarkLightness{0.9}
 \SetWatermarkScale{0.3}
 }{}
+
+
+\iftoggle{final}{}{
+	\usepackage{draftwatermark}
+	\SetWatermarkText{SUBMITTED - DO NOT DISTRIBUTE}
+	\SetWatermarkLightness{0.9}
+	\SetWatermarkScale{0.3}
+}
+
 
 % to read the table
 \usepackage{csvsimple}
