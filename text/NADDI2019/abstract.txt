@@ -1,0 +1,5 @@
+Title: metajelo+DDI: Deriving a metadata package for journals to support external linked objects from DDI
+
+We propose a metadata package (called metajelo) that is intended to provide academic journals with a lightweight means of registering, at the time of publication, the existence and disposition of supplementary materials.  Information about the supplementary materials is, in most cases, critical for the reproducibility and replicability of scholarly results.  In many instances, these materials are curated by a third party, which may or may not follow developing standards for the identification and description of those materials. Researchers struggle when attempting to fully comply with data documentation and provenance documentation standards.
+
+However, many of the required elements are present in DDI, and when properly populated by data custodians using DDI, generation of the metajelo package is straightforward. In this presentation, we describe the rationale behind metajelo, and how archives that use DDI can easily provide researchers with a compact metadata package that enhances reproducibility while reducing researcher effort. 
