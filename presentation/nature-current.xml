@@ -1,0 +1,11 @@
+<section aria-labelledby="data-availability">
+ <div class="..." id="data-availability-section">
+  <h2 class="..." id="data-availability">Data availability</h2>
+   <div class="..." id="data-availability-content">
+    <p>All data and analytical scripts are available at:
+    <a href="https://github.com/bgpurzycki/Religion-and-Violence">
+    https://github.com/bgpurzycki/Religion-and-Violence</a>.
+    </p>
+   </div>
+ </div>
+</section>
