@@ -8,3 +8,6 @@
 *.synctex.gz
 *.bak
 .Rproj.user
+*.nav
+*.snm
+*.toc
