@@ -390,40 +390,110 @@ Paper goes into detail about the \textbf{failures of the current infrastructure}
 \end{center}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Mapping DDI to \metajelo}
-\begin{tabular}{p{0.4\textwidth}l}
-DDI 2.5 & \metajelo 0.7 \\
+\begin{tabular}{lp{0.4\textwidth}}
+	\metajelo 0.7 & DDI 2.5 \\
+	\hline
+	\multicolumn{2}{r}{\bf /codeBook/docDscr[1]/citation[1]/}\\
+	resourceMetadataSource[1] & titlStmt[1]/IDNo[1]\\
+	\  @relationType="HasMetadata"\\
+	\hline\\
+\end{tabular}
+
+\tiny All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Mapping DDI to \metajelo: \texttt{basicMetadata}}
+\begin{tabular}{lp{0.4\textwidth}}
+\metajelo 0.7 & DDI 2.5 \\
 \hline
-\multicolumn{2}{l}{\bf /codeBook/stdyDscr[1]/citation[1]/ }\\
-titlStmt[1]/titl[1] & basicMetadata[1]/Title[1]\\
+\multicolumn{2}{r}{\bf /codeBook/stdyDscr[1]/citation[1]/ }\\
+basicMetadata[1]/Title[1] &titlStmt[1]/titl[1] \\
 
-prodStmt[1]/producer[1]& basicMetadata[1]/Creator[1]\\
+basicMetadata[1]/Creator[1] & prodStmt[1]/producer[1]\\
 
-distStmt[1]/distDate[1]& basicMetadata[1]/PublicationYear[1] \\
+basicMetadata[1]/PublicationYear[1] & distStmt[1]/distDate[1]\\
 
 
-rspStmt[1]/AuthEnty[1..n]& location[1]/institutionName[1]\\
+location[1]/institutionName[1] & rspStmt[1]/AuthEnty[1..n]\\
 \hline
 \\
 \end{tabular}
 
-\footnotesize All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+\tiny All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
 \end{frame}
+
+
 
 \begin{frame}
-\frametitle{Mapping DDI to \metajelo}
-\begin{tabular}{p{0.4\textwidth}l}
-	DDI 2.5 & \metajelo 0.7 \\
+\frametitle{Mapping DDI to \metajelo: \texttt{Institution and product}}
+\begin{tabular}{lp{0.4\textwidth}}
+	\metajelo 0.7 & DDI 2.5 \\
 	\hline
-	\multicolumn{2}{l}{\bf /codeBook/docDscr[1]/citation[1]/}\\
-	titlStmt[1]/IDNo[1] & resourceMetadataSource[1]\\
-	                    & @relationType="HasMetadata"\\
-	\hline\\
+	\multicolumn{2}{r}{\bf /codeBook/stdyDscr[1]/dataAccs[1]/ }\\
+	institutionPolicies/institutionPolicy[1..n] \\
+	\  @policyType="Access"& useStmt/confDec  \\
+	                              & useStmt/restrctn  \\
+	                              & useStmt/specPerm  \\
+	                              & useStmt/conditions  \\
+	\hline
+	\\
 \end{tabular}
 
-\footnotesize All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+\tiny All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+	\texttt{location[1]/}
 \end{frame}
+
+
+\begin{frame}
+\frametitle{Mapping DDI to \metajelo: \texttt{Institution and product}}
+\begin{tabular}{lp{0.4\textwidth}}
+	\metajelo 0.7 & DDI 2.5 \\
+	\hline
+	\multicolumn{2}{r}{\bf /codeBook/stdyDscr[1]/dataAccs[1]/ }\\
+	institutionPolicies/institutionPolicy[1..n] \\
+	\  @policyType="Usage"&  useStmt/restrctn  \\
+	                             & useStmt/specPerm  \\
+	                             & useStmt/conditions  \\
+	                             & useStmt/deposReq \\
+	\multicolumn{2}{l}{institutionContact@institutionContactType=}\\
+	 
+	\ \ "dataCustodian"& useStmt/contact\\
+	\hline
+	\\
+\end{tabular}
+
+\tiny All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+\texttt{location[1]/}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Mapping DDI to \metajelo: Missing?}
+\begin{tabular}{lp{0.4\textwidth}}
+	\metajelo 0.7 & DDI 2.5 \\
+	\hline
+	institutionPolicies/institutionPolicy[1..n] \\
+	\  @policyType="Preservation"&  ?? \\
+	institutionSustainability/missionStatementURL & ??\\
+	\hline
+	\\
+\end{tabular}
+
+\tiny All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+\texttt{location[1]/}
+\end{frame}
+
+
+
+
+
 
 \begin{frame}
 \frametitle{How to \textbf{use} a \metajelo package?}
@@ -460,11 +530,11 @@ Short-term implementation can be made, without preventing future robust implemen
 
 \begin{frame}
 \frametitle{Next steps}
-\begin{block}{Community input}
-	We want to hear from a broad community about utility, extensions, etc.
+\begin{block}{We want to hear from a broad community} 
+	\fullcite{VilhuberLagoze2019}
 \end{block}
 \begin{block}{Development of apps}
-	We have started development of both \textbf{user-facing apps} and \textbf{journal-oriented toolkit}
+	We have started development of both \textbf{user-facing apps} and \textbf{journal-oriented toolkit}, see \texttt{\href{https://github.com/labordynamicsinstitute/metajelo}{github.com/labordynamicsinstitute/metajelo}}
 \end{block}
 \begin{block}{Implementation}
 	This is part of a broader strategy to improve transparency and reproducibility at the American Economic Association and in economics in general
@@ -473,5 +543,5 @@ Short-term implementation can be made, without preventing future robust implemen
 
 
 \begin{frame}
-\centering \Huge Thank you
+\centering \Huge Merci
 \end{frame}
