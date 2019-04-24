@@ -62,40 +62,6 @@
 \end{block}
 \end{frame}
 
-\begin{frame}
-\frametitle{Restricted-access Data}
-\begin{block}{Here in Australia}
-Household, Income and Labour Dynamics in Australia (HILDA) Survey \textellipsis
-\end{block}
-\begin{center}
-\includegraphics[width=0.95\textwidth]{images/hilda-screenshot1.png}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Restricted-access Data}
-\begin{block}{Here in Australia}
-	Household, Income and Labour Dynamics in Australia (HILDA) Survey \textellipsis which is \textbf{restricted-access}
-\end{block}
-\begin{center}
-\includegraphics[width=0.95\textwidth]{images/hilda-screenshot2.png}
-		\includegraphics[width=0.95\textwidth]{images/hilda-screenshot3.png}
-\end{center}
-\end{frame}
-
-
-
-\begin{frame}
-\frametitle{Restricted-access Data}
-\begin{block}{Here in Australia}
-	Household, Income and Labour Dynamics in Australia (HILDA) Survey \textellipsis which is \textbf{restricted-access}
-\end{block}
-\begin{center}
-	\includegraphics[width=0.95\textwidth]{images/hilda-screenshot4.png}
-	\includegraphics[width=0.95\textwidth]{images/hilda-screenshot5.png}
-\end{center}
-\end{frame}
-
 
 
 \begin{frame}
@@ -415,6 +381,49 @@ Paper goes into detail about the \textbf{failures of the current infrastructure}
 \end{block}
 \end{frame}
 
+
+
+\begin{frame}
+\begin{center}
+	\huge This is where YOU come in
+	\includegraphics[height=2in]{images/pointing-finger.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mapping DDI to \metajelo}
+\begin{tabular}{p{0.4\textwidth}l}
+DDI 2.5 & \metajelo 0.7 \\
+\hline
+\multicolumn{2}{l}{\bf /codeBook/stdyDscr[1]/citation[1]/ }\\
+titlStmt[1]/titl[1] & basicMetadata[1]/Title[1]\\
+
+prodStmt[1]/producer[1]& basicMetadata[1]/Creator[1]\\
+
+distStmt[1]/distDate[1]& basicMetadata[1]/PublicationYear[1] \\
+
+
+rspStmt[1]/AuthEnty[1..n]& location[1]/institutionName[1]\\
+\hline
+\\
+\end{tabular}
+
+\footnotesize All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mapping DDI to \metajelo}
+\begin{tabular}{p{0.4\textwidth}l}
+	DDI 2.5 & \metajelo 0.7 \\
+	\hline
+	\multicolumn{2}{l}{\bf /codeBook/docDscr[1]/citation[1]/}\\
+	titlStmt[1]/IDNo[1] & resourceMetadataSource[1]\\
+	                    & @relationType="HasMetadata"\\
+	\hline\\
+\end{tabular}
+
+\footnotesize All \metajelo under \texttt{/record/supplementaryProducts[1]/supplementaryProduct[1]/}
+\end{frame}
 
 \begin{frame}
 \frametitle{How to \textbf{use} a \metajelo package?}
