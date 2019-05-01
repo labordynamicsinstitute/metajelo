@@ -81,14 +81,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<!-- copied from http://schema.re3data.org/2-2/re3dataV2-2.xsd -->
-	<xs:simpleType name="yesno">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="yes"/>
-			<xs:enumeration value="no"/>
-		</xs:restriction>
-	</xs:simpleType>
-
 	<!-- Copied from https://schema.datacite.org/meta/kernel-4.0/include/datacite-relatedIdentifierType-v4.xsd -->
 	<xs:simpleType name="identifierType" id="relatedIdentifierType">
 		<xs:annotation>
@@ -213,8 +205,16 @@
 
 	<xs:complexType name="locationType">
 		<xs:sequence>
-			<xs:element name="institutionID" type="identifierType"> </xs:element>
-
+			<xs:element name="institutionID">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="identifierType" type="identifierType" use="required"
+							/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="institutionName" type="xs:string"/>
 			<xs:element name="institutionType" type="institutionTypes"/>
 			<xs:element name="superOrganizationName" type="xs:string" minOccurs="0"/>
@@ -248,7 +248,7 @@
 				</xs:complexType>
 			</xs:element>
 
-			<xs:element name="versioning" type="yesno"/>
+			<xs:element name="versioning" type="xs:boolean"/>
 		</xs:sequence>
 	</xs:complexType>
 
