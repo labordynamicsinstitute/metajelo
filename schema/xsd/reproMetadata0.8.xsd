@@ -264,7 +264,10 @@
 		<xs:attribute name="appliesToProduct" type="xs:boolean">
 			<xs:annotation>
 				<xs:documentation>appliesToProduct is true for policies that apply to this
-					product</xs:documentation>
+				product. It may be absent, for example, if the creator of the record has pulled
+				policies for an an institution from an external service (e.g. re3data),
+				and has not explicitly annotated all the entries as applying to the
+				product (or not).</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
