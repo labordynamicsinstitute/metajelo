@@ -6,3 +6,4 @@ A metadata package for journals to support external linked objects
 
 ## Presentations
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2577295.svg)](https://doi.org/10.5281/zenodo.2577295) IDCC, Melbourne, Australia (5 Feb 2019)
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2650324.svg)](https://doi.org/10.5281/zenodo.2650324) NADDI, Ottawa, Canada (April 2019)
