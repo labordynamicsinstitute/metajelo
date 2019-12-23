@@ -2,14 +2,7 @@ In most applied sciences,
 it has become common publication practice to provide evidence of the
 statistical or laboratory data underlying the conclusions. This is done
 to support reproducibility and replicability of the scientific
-findings.%
-\footnote{There is considerable heterogeneity in the use of the terms
-	``reproducibility'' and ``replicability''. In this paper, we will adopt
-	the following definitions: reproducibility is ``the ability of a
-	researcher to duplicate the results of a prior study using the same
-	materials and procedures as were used by the original investigator,''
-	\parencite{BollenSocialBehavioralEconomic2015} whereas replicability
-	differs in that ``new data are collected.'' (ibidem).} 
+findings. 
 Journals with a
 data deposit policy have stored the supplementary materials on journal
 websites, often as simple web-based ZIP archives. While ensuring that
@@ -22,28 +15,36 @@ More recently, journals have leveraged
 either dedicated, journal-branded views onto larger archives (e.g,
 Dataverse, Figshare), built their own data archive infrastructure
 (\urlcite{https://www.elsevier.com/authors/author-services/research-data}{Elsevier/Mendeley}), or have allowed for data and code to be stored
-more generally on any of a curated list of ``trusted'' or ``approved''
+more generally on any of a curated list of trusted%
+\footnote{CoreTrustSeal, \url{https://www.coretrustseal.org/}}
+or approved
 whitelist of third-party repositories.%
 \footnote{\url{https://f1000research.com/for-authors/data-guidelines}, \url{https://www.nature.com/sdata/policies/repositories}}
 Each of these alternatives rely
-on a journal or publisher ``vetting'' the repositories and ascertaining
-that it meets some set of criteria.  While some third-party vetting of
-repositories exists,%
-\footnote{CoreTrustSeal, \url{https://www.coretrustseal.org/}}
-it is far from being universally accepted at this
-time. 
+on a journal or publisher vetting the repositories and ascertaining
+that it meets some set of criteria, or relying on third-party vetting of
+repositories exists, such as CoreTrustSeal.%
+\footnote{\url{https://www.coretrustseal.org/}} 
+For instance, \cite{NatureScientificData2019} assesses relevance to the community, cost to researchers, data access conditions, repository longevity, data persistence and versioning. \cite{CoreTrustSealCoreTrustSeal2017} assesses similar criteria, as well as policies surrounding a set of requirements. The presence on a list of recommended data repositories, or a successful CoreTrustSeal certification, are strong indicators of robust and persistent archives.
 
-In all cases known to us, the support for restricted-access
-repositories is quite limited. Thus, most of the known support for
-third-party repositories does not provide much information about
-accessibility (the presumption is that access is open), nor about the
-permanence of the repositories - this is presumably one of the
-evaluation criteria that journals and publishers use, but is not clearly
-defined as such. In fact, at least one of the consulted publishers
-explicitly allows for quite transitory repositories for code, without
-clearly distinguishing that from archives that are more permanent.%
-\footnote{F1000Research (\url{https://f1000research.com/for-authors/data-guidelines}) allows for code deposits through github.com, which has no mandate to preserve, and allows code owners to delete materials at any time without restrictions.}
+However, in our experience \parencite{VilhuberAEAPap.Proc.2020,Kingi2018}, only a few of the holders of restricted-access data appear on such lists. Large survey institutions, many national statistical offices, and nearly all private-sector holders of restricted-access data provide some information about accessibility, but nearly no (publicly accessible) information about data persistence, versioning, or citability of their data assets. While publishers and (some) funders expect that repositories support researchers in making data FAIR, many data providers have yet to respond. In some cases, data access by researchers is incidental, and data providers are not responsive to FAIR considerations, in particular for private sector and sub-national providers of administrative data. Even at the national level,   regulations in various countries that aim to improve access to and preservation of data assets for research are very recent (Digital Economy Act of 2017 in the UK, Loi pour une République Numérique 2017 in France, and the Foundations for Evidence-Based Policymaking Act of 2018 in the United States, to mention only a few examples), and have yet to make a measurable impact. 
 
+Even when data are public-use, or even when the repository is indexed in re3data,\footnote{\url{https://www.re3data.org}} information about accessibility and permanence are incomplete or wrong. Institutions are also able to list multiple access and preservation policies, leaving it open which policy applies to a particular data object. See the Appendix for additional details.
+
+%In all cases known to us, the support for restricted-access
+%repositories is quite limited. Thus, most of the known support for
+%third-party repositories does not provide much information about
+%accessibility (the presumption is that access is open), nor about the
+%permanence of the repositories - this is presumably one of the
+%evaluation criteria that journals and publishers use, but is not clearly
+%defined as such. 
+%In fact, at least one of the consulted publishers
+%explicitly allows for quite transitory repositories for code, without
+%clearly distinguishing that from archives that are more permanent.%
+%\footnote{F1000Research (\url{https://f1000research.com/for-authors/data-guidelines}) allows for code deposits through github.com, which has no mandate to preserve, and allows code owners to delete materials at any time without restrictions.}
+
+To a large extent, the onus on reporting on these facets of data archives falls onto the researcher who uses these data, and will continue to do so for considerable time. 
+%
 Nevertheless, much of the information about persistence of archives and
 materials stored within those archives is available, albeit in
 idiosyncratic and non-machine readable form. Consider only the case of

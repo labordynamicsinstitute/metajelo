@@ -9,25 +9,41 @@ Each record then can describe an unlimited number of \texttt{supplementaryProduc
 The full annotated schema is available for examination online at 
 \iftoggle{blind}{[URL blinded - please contact JOURNAL]}{\href{https://github.com/labordynamicsinstitute/metajelo}{github.com/labordynamicsinstitute/metajelo}}.
 
-%id;field;description;comment;source;larscomment
-\csvreader[/csv/separator=semicolon,/csv/head=true,%
-/csv/before reading=\footnotesize%
-\setlength{\tabcolsep}{2.5pt},%
-/csv/after reading=\normalsize,%
-/csv/head to column names=true,%
-/csv/longtable=L{0.119\textwidth}L{0.29\textwidth}L{0.3\textwidth}L{0.17\textwidth}L{0.09\textwidth},
-/csv/table head=%
- \multicolumn{5}{c}{Table~\thetable : \metajelo Description\label{tab:desc:metajelo}}\\%
- \hline \bf ID & \bf Field &\bf Definition & \bf Notes &\\\hline\endfirsthead%
- \multicolumn{5}{c}{Table~\ref{tab:desc:metajelo} : \metajelo Description}\\%
- \hline \bf ID & \bf Field &\bf Definition & \bf Notes &\\\hline\endhead%
-  \hline\endlastfoot%
- \hline&&&\multicolumn{2}{r}{(cont)}\\\endfoot,
-/csv/late after line=\\\hline,
-table foot=\hline%
-]%
-{../schema/tabular-metajelo.csv}{}{%
-	\id &\texttt{\field} &\description &  \comment & \source 
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%
+%%%%%%          TABLE Metajelo Description
+%%%%%%
+%%id;field;description;comment;source;larscomment
+%\csvreader[/csv/separator=semicolon,/csv/head=true,%
+%/csv/before reading=\footnotesize%
+%\setlength{\tabcolsep}{2.5pt},%
+%/csv/after reading=\normalsize,%
+%/csv/head to column names=true,%
+%/csv/longtable=llp{3in}@{\hskip 0.2in}p{1in}p{0.5in},
+%/csv/table head=%
+%\multicolumn{5}{c}{Table~\thetable : \metajelo Description\label{tab:desc:metajelo}}\\%
+%\toprule \bf ID & \bf Field &\bf Definition & \bf Notes  &\bf Source \\\midrule\endfirsthead%
+%\multicolumn{5}{c}{Table~\ref{tab:desc:metajelo} : \metajelo Description}\\%
+%\toprule \bf ID & \bf Field &\bf Definition & \bf Notes & \bf Source\\\midrule\endhead%
+%%\bottomrule
+%\endlastfoot%
+%\midrule&&&\multicolumn{2}{r}{(cont)}\\\endfoot,
+%/csv/late after line=\\\midrule,
+%%table foot=\bottomrule%
+%]%
+%{../schema/tabular-metajelo.csv}{}{%
+%	\id &\multicolumn{4}{l}{\texttt{\field}:}\\
+%	&\  &\description & \raggedright \comment & \source 
+%}
 
-We highlight a few key elements. First, much of the information about the object itself mirrors the DataCite schema \parencite{DataCiteMetadataWorkingGroupDataCiteMetadataSchema2017,DataCiteMetadataWorkingGroupDataCiteMetadataSchema2017a}, even if no \ac{DOI} exists. The bibliographic metadata schema is based on DataCite for simplicity, and is always required. Much of the information on the institution, including its policies, mirrors the re3data schema \parencite{Re3data.Orgre3dataorgMetadata2015,RucknagelMetadataSchemaDescription2015}, with much simplification. In particular, we are interested primarily in \texttt{policyType="Preservation Policy"} and \texttt{policyType="Terms of Use"}. In contrast with the re3data schema, we have merged licenses into the same repeatable element, so that \texttt{policyType="License"} is a valid option. In all cases, we also allow for verbatim capture of the text of the policy, since policies posted on websites, and not versioned, may change over time. We envision either manual entry by the researcher, or webscraping of the provided policy {URL} to populate this field.
+\begin{table}
+	\centering
+	\caption{\metajelo Description\label{tab:desc:metajelo}  }
+	
+	[about here]
+	
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We highlight a few key elements. First, much of the information about the object itself mirrors the DataCite schema \parencite{DataCiteMetadataWorkingGroup2017,DataCiteMetadataWorkingGroup2017a}, even if no \ac{DOI} exists. The bibliographic metadata schema is based on DataCite for simplicity, and is always required. Much of the information on the institution, including its policies, mirrors the re3data schema \parencite{Re3data.Org2015,Rucknagel2015}, with much simplification. In particular, we are interested primarily in \texttt{policyType="Preservation Policy"} and \texttt{policyType="Terms of Use"}. In contrast with the re3data schema, we have merged licenses into the same repeatable element, so that \texttt{policyType="License"} is a valid option. In all cases, we also allow for verbatim capture of the text of the policy, since policies posted on websites, and not versioned, may change over time. We envision either manual entry by the researcher, or webscraping of the provided policy {URL} to populate this field.
