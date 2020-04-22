@@ -45,6 +45,7 @@
 % to read the table
 \usepackage{csvsimple}
 \usepackage{longtable}
+\usepackage{booktabs}
 % for adding a flex space to the metajelo macro
 \usepackage{xspace}
 % to adjust floats
@@ -59,7 +60,7 @@
 \input{acrodefs.tex}
 %\usepackage{natbib}
 %\usepackage[sorting=nyt,maxnames=10,backend=biber]{biblatex}
-\usepackage[style=apa,sortcites,backend=biber,date=year]{biblatex}
+\usepackage[style=apa,natbib,sortcites,backend=biber,date=year]{biblatex}
 \AtEveryBibitem{\clearfield{month}}
 \AtEveryBibitem{\clearfield{day}}
 %\DeclareLanguageMapping{american}{american-apa}
@@ -78,6 +79,7 @@
 % Different ways to cite URLS
 %\newcommand{\urlcite}[2]{\href{#1}{#2}
 \newcommand{\urlcite}[2]{#2\footnote{\url{#1}}}
+% 
 
 \newcommand{\metajelo}{\texttt{metajelo}\xspace}
 
