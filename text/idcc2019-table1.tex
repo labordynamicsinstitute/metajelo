@@ -1,0 +1,22 @@
+%id;field;description;comment;source;larscomment
+\csvreader[/csv/separator=semicolon,/csv/head=true,%
+/csv/before reading=\footnotesize%
+\setlength{\tabcolsep}{2.5pt},%
+/csv/after reading=\normalsize,%
+/csv/head to column names=true,%
+/csv/longtable=llp{3in}@{\hskip 0.2in}p{1in}p{0.5in},
+/csv/table head=%
+ \multicolumn{5}{c}{Table~\thetable : \metajelo Description\label{tab:desc:metajelo}}\\%
+ \toprule \bf ID & \bf Field &\bf Definition & \bf Notes  &\bf Source \\\midrule\endfirsthead%
+ \multicolumn{5}{c}{Table~\ref{tab:desc:metajelo} : \metajelo Description}\\%
+ \toprule \bf ID & \bf Field &\bf Definition & \bf Notes & \bf Source\\\midrule\endhead%
+  %\bottomrule
+  \endlastfoot%
+ \midrule&&&\multicolumn{2}{r}{(cont)}\\\endfoot,
+/csv/late after line=\\\midrule,
+%table foot=\bottomrule%
+]%
+{../schema/tabular-metajelo.csv}{}{%
+	\id &\multicolumn{4}{l}{\texttt{\field}:}\\
+	    &\  &\description & \raggedright \comment & \source 
+}
