@@ -1,6 +1,14 @@
 # metajelo
 A metadata package for journals to support external linked objects
 
+## XSD
+
+The version-specific XSD can be found at
+
+https://raw.githubusercontent.com/labordynamicsinstitute/metajelo/master/schema/$VERSION/reproMetadata.xml
+
+
+
 ## Working paper
 > C. Lagoze and L. Vilhuber, “[metajelo: A metadata package for journals to support external linked objects](http://digitalcommons.ilr.cornell.edu/ldi/52/),” Labor Dynamics Institute, Document 52, 2019.
 
