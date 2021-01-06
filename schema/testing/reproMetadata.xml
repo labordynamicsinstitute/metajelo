@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 (http://www.altova.com) by Carl Lagoze (University of Michigan) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:re3="http://www.re3data.org/schema/2-2"
+	xmlns:datacite="http://datacite.org/schema/kernel-4"
+	xmlns="http://ourdomain.cornell.edu/reuse/v.01"
+	targetNamespace="http://ourdomain.cornell.edu/reuse/v.01" elementFormDefault="qualified">
+	<xs:element name="record" type="recordType">
+		<xs:annotation>
+			<xs:documentation>This is the root element. Defined as metadata describing the linkage
+				of a pulication to supplementary products (data, software, etc.)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="recordType">
+		<xs:annotation>
+			<xs:documentation>metadata about the publication and links to unlimited number of
+				suppementary products</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="identifier">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="identifierType" type="identifierType" use="required"
+							/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>The date of the original creation of this metadata
+						record</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastModified" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>The date of the most recent modification of this
+						recocrd</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="relatedIdentifier" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="relatedIdentifierType" type="identifierType"
+								use="required"/>
+							<xs:attribute name="relationType" type="relationType" use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="supplementaryProducts">
+				<xs:annotation>
+					<xs:documentation>The link to the set of supplemenary
+						products</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="supplementaryProduct" minOccurs="1" maxOccurs="unbounded"
+							type="supplementaryProductType">
+							<xs:annotation>
+								<xs:documentation>An artifact associated with the resource
+									corresponding to this record.</xs:documentation>
+								<xs:documentation>Examples are software, data, audio, video,
+									etc.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:simpleType name="institutionTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="commercial"/>
+			<xs:enumeration value="non-profit"/>
+			<xs:enumeration value="governmental"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Copied from https://schema.datacite.org/meta/kernel-4.0/include/datacite-relatedIdentifierType-v4.xsd -->
+	<xs:simpleType name="identifierType" id="relatedIdentifierType">
+		<xs:annotation>
+			<xs:documentation>The type of the RelatedIdentifier.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ARK"/>
+			<xs:enumeration value="arXiv"/>
+			<xs:enumeration value="bibcode"/>
+			<xs:enumeration value="DOI"/>
+			<xs:enumeration value="EAN13"/>
+			<xs:enumeration value="EISSN"/>
+			<xs:enumeration value="Handle"/>
+			<xs:enumeration value="IGSN"/>
+			<xs:enumeration value="ISBN"/>
+			<xs:enumeration value="ISSN"/>
+			<xs:enumeration value="ISTC"/>
+			<xs:enumeration value="LISSN"/>
+			<xs:enumeration value="LSID"/>
+			<xs:enumeration value="PMID"/>
+			<xs:enumeration value="PURL"/>
+			<xs:enumeration value="UPC"/>
+			<xs:enumeration value="URL"/>
+			<xs:enumeration value="URN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Copied from https://schema.datacite.org/meta/kernel-4.0/include/datacite-relationType-v4.xsd -->
+	<xs:simpleType name="relationType" id="relationType">
+		<xs:annotation>
+			<xs:documentation>Description of the relationship of the resource being registered (A)
+				and the related resource (B).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IsCitedBy"/>
+			<xs:enumeration value="Cites"/>
+			<xs:enumeration value="IsSupplementTo"/>
+			<xs:enumeration value="IsSupplementedBy"/>
+			<xs:enumeration value="IsContinuedBy"/>
+			<xs:enumeration value="Continues"/>
+			<xs:enumeration value="IsNewVersionOf"/>
+			<xs:enumeration value="IsPreviousVersionOf"/>
+			<xs:enumeration value="IsPartOf"/>
+			<xs:enumeration value="HasPart"/>
+			<xs:enumeration value="IsReferencedBy"/>
+			<xs:enumeration value="References"/>
+			<xs:enumeration value="IsDocumentedBy"/>
+			<xs:enumeration value="Documents"/>
+			<xs:enumeration value="IsCompiledBy"/>
+			<xs:enumeration value="Compiles"/>
+			<xs:enumeration value="IsVariantFormOf"/>
+			<xs:enumeration value="IsOriginalFormOf"/>
+			<xs:enumeration value="IsIdenticalTo"/>
+			<xs:enumeration value="HasMetadata"/>
+			<xs:enumeration value="IsMetadataFor"/>
+			<xs:enumeration value="Reviews"/>
+			<xs:enumeration value="IsReviewedBy"/>
+			<xs:enumeration value="IsDerivedFrom"/>
+			<xs:enumeration value="IsSourceOf"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- copied from https://schema.datacite.org/meta/kernel-4.0/include/datacite-resourceType-v4.xsd -->
+	<xs:simpleType name="resourceType" id="resourceType">
+		<xs:annotation>
+			<xs:documentation>The general type of a resource.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Audiovisual"/>
+			<xs:enumeration value="Collection"/>
+			<xs:enumeration value="Dataset"/>
+			<xs:enumeration value="Event"/>
+			<xs:enumeration value="Image"/>
+			<xs:enumeration value="InteractiveResource"/>
+			<xs:enumeration value="Model"/>
+			<xs:enumeration value="PhysicalObject"/>
+			<xs:enumeration value="Service"/>
+			<xs:enumeration value="Software"/>
+			<xs:enumeration value="Sound"/>
+			<xs:enumeration value="Text"/>
+			<xs:enumeration value="Workflow"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="doiType">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="10\..+/.+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="myInstitutionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="governmental"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="emailAddress">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^@]+@[^\.]+\..+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="institutionContactTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="dataCustodian"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="policyTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Access"/>
+			<xs:enumeration value="Collection"/>
+			<xs:enumeration value="Data"/>
+			<xs:enumeration value="Metadata"/>
+			<xs:enumeration value="Preservation"/>
+			<xs:enumeration value="Submission"/>
+			<xs:enumeration value="Quality"/>
+			<xs:enumeration value="Terms of Use"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="locationType">
+		<xs:sequence>
+			<xs:element name="institutionID">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="identifierType" type="identifierType" use="required"
+							/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="institutionName" type="xs:string"/>
+			<xs:element name="institutionType" type="institutionTypes"/>
+			<xs:element name="superOrganizationName" type="xs:string" minOccurs="0"/>
+			<xs:element name="institutionContact">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="emailAddress">
+							<xs:attribute name="institutionContactType"
+								type="institutionContactTypes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="institutionSustainability">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="missionStatementURL" type="xs:anyURI"/>
+						<xs:element name="fundingStatementURL" type="xs:anyURI"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="institutionPolicies">
+				<xs:annotation>
+					<xs:documentation>set of possible policies for this location</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="institutionPolicy" minOccurs="1" maxOccurs="unbounded"
+							type="policyType"> </xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="versioning" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="policyType">
+
+		<xs:choice>
+			<xs:element name="freeTextPolicy" type="xs:string"/>
+			<xs:element name="refPolicy" type="xs:anyURI"/>
+		</xs:choice>
+
+		<xs:attribute name="policyType" type="policyTypes"/>
+		<xs:attribute name="appliesToProduct" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>appliesToProduct is true for policies that apply to this
+				product. It may be absent, for example, if the creator of the record has pulled
+				policies for an an institution from an external service (e.g. re3data),
+				and has not explicitly annotated all the entries as applying to the
+				product (or not).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="supplementaryProductType">
+		<xs:sequence>
+			<xs:element name="basicMetadata">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Title" type="xs:string"/>
+						<xs:element name="Creator" type="xs:string"/>
+						<xs:element name="PublicationYear" type="xs:date"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="resourceID" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="relatedIdentifierType" type="identifierType"
+								use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="resourceType">
+				<xs:annotation>
+					<xs:documentation>The type of the supplementary product. You may enter an
+						additional free text description.</xs:documentation>
+					<xs:documentation>The format is open, but the preferred format is a single term
+						of some detail so that a pair can be formed with the
+						sub-property.</xs:documentation>
+					<xs:documentation>same structure as in DataCite</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="resourceTypeGeneral" type="resourceType"
+								use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Format" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="format" type="xs:string" minOccurs="0"
+							maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Technical format of the
+									resource.</xs:documentation>
+								<xs:documentation>Use file extension or MIME type where
+									possible.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="resourceMetadataSource" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:anyURI">
+							<xs:attribute name="relationType" use="required" fixed="HasMetadata"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="location" type="locationType">
+				<xs:annotation>
+					<xs:documentation>Metadata about a location (institution, archive, library) at
+						which the</xs:documentation>
+					<xs:documentation>supplementary product was deposited</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
