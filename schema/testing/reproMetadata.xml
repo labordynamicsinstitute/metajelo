@@ -81,6 +81,13 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+  <!-- Copied from https://schema.datacite.org/meta/kernel-4.2/metadata.xsd -->
+  <xs:simpleType name="yearType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[\d]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
 	<!-- Copied from https://schema.datacite.org/meta/kernel-4.0/include/datacite-relatedIdentifierType-v4.xsd -->
 	<xs:simpleType name="identifierType" id="relatedIdentifierType">
 		<xs:annotation>
@@ -277,9 +284,9 @@
 			<xs:element name="basicMetadata">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Title" type="xs:string"/>
-						<xs:element name="Creator" type="xs:string"/>
-						<xs:element name="PublicationYear" type="xs:date"/>
+						<xs:element name="Title" type="xs:string" maxOccurs="unbounded"/>
+						<xs:element name="Creator" type="xs:string" maxOccurs="unbounded"/>
+						<xs:element name="PublicationYear" type="yearType"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
