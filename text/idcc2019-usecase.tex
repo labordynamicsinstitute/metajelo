@@ -1,10 +1,17 @@
-We target a specific but very common use case. A researcher has written a paper with empirical content, and is required by the journal's data and code availability policy to prepare a ``replication package.'' The journal's policy requires that the code and data be accessible to others, but does not require deposit of the materials as a ``supplementary file,'' i.e., as a ZIP file on their website.\footnote{In fact, some journals may not offer that option.} However, in all cases, the journal wishes to ascertain three key attributes of the replication package or packages:
+We target a specific but very common use case (Figure~\ref{fig:usecase}). A researcher has written a paper with empirical content, and is required by the journal's data and code availability policy to prepare a ``replication package.'' The journal's policy requires that the code and data be accessible to others, but does not require deposit of the materials as a ``supplementary file,'' i.e., as a ZIP file on their website.\footnote{In fact, some journals may not offer that option.} However, in all cases, the journal wishes to ascertain three key attributes of the replication package or packages:
 \begin{itemize}
     \item the \textit{existence} of the package
     \item the \textit{access rules} to the package (license, terms of use)
     \item the \textit{persistence} of the package
 \end{itemize}
-In an ideal scenario, the existence of the package can be easily ascertained in a reputable repository, it is made available under an well-specified (ideally open) license, and it is available ``forever''. When the journal manages its own repository, these attributes are known. When the package is available elsewhere, these attributes need to be discovered. Furthermore,  this needs to happen in a scalable,  automated, and reusable fashion, as it should be feasible to do so for all articles, submitted to any journal. 
+In an ideal scenario, the existence of the package can be easily ascertained in a reputable repository, it is made available under an well-specified (ideally open) license, and it is available ``forever''. When the journal manages its own repository, these attributes are known. When the package is available elsewhere, these attributes need to be discovered. Furthermore,  this needs to happen in a scalable,  automated, and reusable fashion, as it should be feasible to do so for all articles, submitted to any journal. However, in our use cases, the data used by the author is in fact re-used, secondary-use data, where the source data may not be in a traditional trusted repository. This, after all, is the whole point of FAIR: to be able to re-use existing data. And yet, the availability of metadata in such cases is problematic. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{text/images/metajelo drawing.png}
+    \caption{Typical secondary-use of research data}
+    \label{fig:usecase}
+\end{figure}
 
 \subsection{Current Metadata Infrastructure and Use Cases}
 The current metadata infrastructure should be expected to work well for open-access data deposits. Deposits are encouraged in known repositories such as \ac{ICPSR}, Zenodo, or the \urlcite{https://osf.io}{Open Science Framework}, which have been vetted according to certain criteria by the journals themselves.
