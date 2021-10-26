@@ -7,6 +7,9 @@ The version-specific XSD can be found at
 
 https://raw.githubusercontent.com/labordynamicsinstitute/metajelo/master/schema/$VERSION/reproMetadata.xml
 
+## Published paper
+
+>  L. Vilhuber and C. Lagoze. 2021. “[metajelo: A metadata package for journals to support external linked objects](https://doi.org/10.2218/ijdc.v16i1.600),” International Journal of Digital Curation. Vol 16, No 1. https://doi.org/10.2218/ijdc.v16i1.600.
 
 
 ## Working paper
